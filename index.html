@@ -1,127 +1,229 @@
-<style>
-  .animated-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin: 100px auto;
-    max-width: 1200px;
-    flex-wrap: wrap;
-  }
-
-  .animated-img {
-    width: 400px;
-    transition: transform 0.3s ease-out;
-    will-change: transform;
-  }
-
-  .animated-text {
-    max-width: 400px;
-    font-size: 28px;
-    line-height: 1.4;
-    text-align: left;
-  }
-
-  .animated-text p {
-    margin: 0 0 10px;
-  }
-
-  .price-highlight {
-    font-size: 48px;
-    color: #00ff88;
-    font-weight: bold;
-    animation: pulse 1s infinite alternate;
-    margin-top: 40px;
-  }
-
-  @keyframes pulse {
-    from {
-      transform: scale(1);
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gamura - Landing Interativa</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
     }
-    to {
-      transform: scale(1.08);
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
     }
-  }
 
-  .buy-button {
-    display: inline-block;
-    margin-top: 20px;
-    background: linear-gradient(to right, #9B30FF, #00BFFF);
-    padding: 15px 30px;
-    border-radius: 30px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-  }
+    .logo img {
+      max-width: 240px;
+    }
 
-  .buy-button:hover {
-    transform: scale(1.05);
-  }
+    .icons {
+      display: flex;
+      gap: 20px;
+      transform: translateX(-20px);
+    }
 
-  .static-price {
-    font-size: 32px;
-    margin-top: 20px;
-  }
+    .icons i {
+      font-size: 25.2px;
+      cursor: pointer;
+      color: white;
+    }
 
-  .divider {
-    width: 100%;
-    height: 3px;
-    background-color: #00BFFF;
-    margin: 60px auto;
-    border-radius: 10px;
-  }
-</style>
+    .divider {
+      width: 100%;
+      height: 3px;
+      background-color: #00BFFF;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
 
-<!-- PRIMEIRA SESSÃO - IMG ESQUERDA / TEXTO DIREITA -->
-<div class="divider"></div>
-<div class="animated-section">
-  <img src="controle-sem-fundo1.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
-  <div class="animated-text">
-    <p>O Controle Gamura</p>
-    <p>Pro é feito para</p>
-    <p>quem busca total</p>
-    <p>controle e estilo.</p>
+    .setup-container {
+      position: relative;
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .setup-image {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: transparent;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hotspot:hover {
+      background-color: white;
+    }
+
+    #hotspot-headset {
+      top: 50%;
+      left: 75%;
+    }
+
+    #hotspot-led {
+      top: 70%;
+      left: 12%;
+    }
+
+    #hotspot-controller {
+      top: 80%;
+      left: 75%;
+    }
+
+    .animated-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin: 100px auto;
+      max-width: 1200px;
+      flex-wrap: wrap;
+      padding: 60px 20px 120px;
+    }
+
+    .animated-img {
+      width: 400px;
+      transition: transform 0.3s ease-out;
+      will-change: transform;
+    }
+
+    .animated-text {
+      max-width: 400px;
+      font-size: 28px;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    .animated-text p {
+      margin: 0 0 10px;
+    }
+
+    .price-highlight {
+      font-size: 48px;
+      color: #00ff88;
+      font-weight: bold;
+      animation: pulse 1s infinite alternate;
+      margin-top: 40px;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.08);
+      }
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: linear-gradient(to right, #9B30FF, #00BFFF);
+      padding: 15px 30px;
+      border-radius: 30px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .buy-button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo Gamura" />
+    </div>
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
   </div>
-</div>
 
-<!-- SEGUNDA SESSÃO - TEXTO ESQUERDA / IMG DIREITA -->
-<div class="animated-section">
-  <div class="animated-text">
-    <p>Design ergonômico,</p>
-    <p>resposta rápida e</p>
-    <p>conexão via USB-C</p>
-    <p>ou Bluetooth.</p>
+  <div class="divider"></div>
+
+  <div class="setup-container">
+    <img src="setup-gamer.png" alt="Setup Gamer" class="setup-image" />
+    <div id="hotspot-controller" class="hotspot" onclick="showDetails('controller')"></div>
+    <div id="hotspot-headset" class="hotspot" onclick="showDetails('headset')"></div>
+    <div id="hotspot-led" class="hotspot" onclick="showDetails('led')"></div>
   </div>
-  <img src="controle-sem-fundo2.png" alt="Controle Interativo" class="animated-img" id="img2" />
-</div>
 
-<!-- TERCEIRA SESSÃO - MAIS DESCRIÇÃO? -->
-<div class="animated-section">
-  <img src="controle-sem-fundo3.png" alt="Controle Moderno" class="animated-img" id="img3" />
-  <div class="animated-text">
-    <p>Compatível com PC,</p>
-    <p>Switch e Android.</p>
-    <p>Gatilhos sensíveis</p>
-    <p>para máxima precisão.</p>
+  <div class="divider"></div>
+
+  <!-- BLOCO ATUALIZADO DO CONTROLE -->
+  <div class="animated-section">
+    <img src="controle-sem-fundo1.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
+    <div class="animated-text">
+      <p>O Controle Gamura</p>
+      <p>Pro é feito para</p>
+      <p>quem busca total</p>
+      <p>controle e estilo.</p>
+    </div>
   </div>
-</div>
 
-<!-- PREÇO E BOTÃO -->
-<div class="animated-section" style="flex-direction: column;">
-  <div class="price-highlight">R$199,90</div>
-  <a href="#" class="buy-button">Compre Agora</a>
-  <div class="static-price">R$199,90</div>
-</div>
+  <div class="animated-section">
+    <div class="animated-text">
+      <p>Design ergonômico,</p>
+      <p>resposta rápida e</p>
+      <p>conexão via USB-C</p>
+      <p>ou Bluetooth.</p>
+    </div>
+    <img src="controle-sem-fundo2.png" alt="Controle Interativo" class="animated-img" id="img2" />
+  </div>
 
-<script>
-  // Simula o efeito de parallax no scroll
-  window.addEventListener('scroll', () => {
-    const offset = window.scrollY;
-    document.querySelectorAll('.animated-img').forEach((img, i) => {
-      img.style.transform = `translateY(${offset * 0.05 * (i + 1)}px)`;
+  <div class="animated-section">
+    <img src="controle-sem-fundo3.png" alt="Controle Moderno" class="animated-img" id="img3" />
+    <div class="animated-text">
+      <p>Compatível com PC,</p>
+      <p>Switch e Android.</p>
+      <p>Gatilhos sensíveis</p>
+      <p>para máxima precisão.</p>
+    </div>
+  </div>
+
+  <div class="animated-section" style="flex-direction: column;">
+    <div class="price-highlight">R$199,90</div>
+    <a href="#" class="buy-button">Compre Agora</a>
+  </div>
+
+  <script>
+    function showDetails(item) {
+      const sections = document.querySelectorAll('.details');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(`details-${item}`).style.display = 'block';
+    }
+
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      document.querySelectorAll('.animated-img').forEach((img, i) => {
+        img.style.transform = `translateY(${offset * 0.05 * (i + 1)}px)`;
+      });
     });
-  });
-</script>
+  </script>
+
+</body>
+</html>
