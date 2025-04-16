@@ -34,24 +34,34 @@
     }
 
     .hotspot {
-      position: absolute;
+       position: absolute;
       width: 30px;
       height: 30px;
-      border-radius: 50%;
-      background-color: #00BFFF;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
       border: 2px solid white;
+      border-radius: 50%;
+      background-color: transparent;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .hotspot[data-hotspot="1"] {
-      top: 40%;
+    .hotspot:hover {
+      background-color: white;
+    }
+
+    /* Hotspot positions (you can adjust these values for better placement) */
+    #hotspot-headset {
+      top: 50%; /* Adjusted to center over the headset */
+      left: 60%;
+    }
+
+    #hotspot-led {
+      top: 70%; /* Adjusted for LED in the bottom-left corner */
+      left: 25%;
+    }
+
+    #hotspot-controller {
+      top: 75%; /* Adjusted for controller position on the left part of the desk */
       left: 30%;
-    }
-
-    .hotspot[data-hotspot="2"] {
-      top: 60%;
-      left: 70%;
     }
 
     .section {
@@ -190,8 +200,9 @@
   <!-- HERO COM HOTSPOTS -->
   <div class="hero">
     <img src="setup-gamer.png" alt="Controle Gamura Hero">
-    <div class="hotspot" data-hotspot="1"></div>
-    <div class="hotspot" data-hotspot="2"></div>
+    <div id="hotspot-controller" class="hotspot" onclick="showDetails('controller')"></div>
+    <div id="hotspot-headset" class="hotspot" onclick="showDetails('headset')"></div>
+    <div id="hotspot-led" class="hotspot" onclick="showDetails('led')"></div>
   </div>
 
   <!-- CONTEÚDO REVELADO PELO HOTSPOT -->
