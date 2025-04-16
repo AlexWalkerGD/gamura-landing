@@ -18,7 +18,7 @@
     }
 
     .logo-container img {
-      max-width: 250px;
+      max-width: 350px;
     }
 
     .animated-section {
@@ -27,33 +27,37 @@
       justify-content: center;
       gap: 40px;
       margin: 100px auto;
-      max-width: 1200px;
+      width: 100%;
+      padding: 0 40px;
       flex-wrap: wrap;
     }
 
     .animated-img {
-      width: 400px;
+      width: 560px;
       transition: transform 0.3s ease-out;
       will-change: transform;
     }
 
     .animated-text {
-      max-width: 400px;
-      font-size: 28px;
-      line-height: 1.4;
+      max-width: 560px;
+      font-size: 30px;
+      line-height: 1.6;
       text-align: left;
     }
 
     .animated-text p {
-      margin: 0 0 10px;
+      margin: 0 0 15px;
     }
 
     .price-highlight {
-      font-size: 48px;
+      font-size: 60px;
       color: #00ff88;
       font-weight: bold;
       animation: pulse 1s infinite alternate;
       margin-top: 40px;
+      border: 3px solid #00ff88;
+      padding: 20px 40px;
+      border-radius: 20px;
     }
 
     @keyframes pulse {
@@ -67,12 +71,12 @@
 
     .buy-button {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       background: linear-gradient(to right, #9B30FF, #00BFFF);
-      padding: 15px 30px;
-      border-radius: 30px;
+      padding: 20px 60px;
+      border-radius: 40px;
       color: white;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -83,17 +87,52 @@
       transform: scale(1.05);
     }
 
-    .static-price {
-      font-size: 32px;
-      margin-top: 20px;
-    }
-
     .divider {
       width: 100%;
       height: 3px;
       background-color: #00BFFF;
       margin: 60px auto;
       border-radius: 10px;
+    }
+
+    .reviews {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 100px auto;
+      width: 100%;
+      padding: 0 40px;
+    }
+
+    .review {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 500px;
+    }
+
+    .review-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #ff69b4;
+      object-fit: cover;
+    }
+
+    .review-text {
+      font-style: italic;
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
@@ -109,20 +148,20 @@
   <div class="animated-section">
     <img src="controles.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
     <div class="animated-text">
-      <p>O Controle Gamura</p>
-      <p>Pro é feito para</p>
-      <p>quem busca total</p>
-      <p>controle e estilo.</p>
+      <p>O Controle Gamura Pro é</p>
+      <p>feito para quem busca</p>
+      <p>total controle, conforto</p>
+      <p>e muito estilo.</p>
     </div>
   </div>
 
   <!-- SEGUNDA SESSÃO -->
   <div class="animated-section">
     <div class="animated-text">
-      <p>Design ergonômico,</p>
-      <p>resposta rápida e</p>
-      <p>conexão via USB-C</p>
-      <p>ou Bluetooth.</p>
+      <p>Design ergonômico, resposta</p>
+      <p>rápida, conexão USB-C</p>
+      <p>ou Bluetooth para máxima</p>
+      <p>versatilidade de uso.</p>
     </div>
     <img src="controles2.png" alt="Controle Interativo" class="animated-img" id="img2" />
   </div>
@@ -131,10 +170,22 @@
   <div class="animated-section">
     <img src="controles3.png" alt="Controle Moderno" class="animated-img" id="img3" />
     <div class="animated-text">
-      <p>Compatível com PC,</p>
-      <p>Switch e Android.</p>
-      <p>Gatilhos sensíveis</p>
-      <p>para máxima precisão.</p>
+      <p>Compatível com PC, Switch,</p>
+      <p>Android. Gatilhos</p>
+      <p>sensíveis e máxima precisão</p>
+      <p>em cada movimento.</p>
+    </div>
+  </div>
+
+  <!-- AVALIAÇÕES -->
+  <div class="reviews">
+    <div class="review">
+      <img src="cliente1.jpg" alt="Cliente 1" class="review-img" />
+      <div class="review-text">"Excelente qualidade e chegou super rápido. Controle top!"</div>
+    </div>
+    <div class="review">
+      <img src="cliente2.jpg" alt="Cliente 2" class="review-img" />
+      <div class="review-text">"Muito confortável para jogar. Me surpreendeu!"</div>
     </div>
   </div>
 
@@ -144,12 +195,17 @@
     <a href="#" class="buy-button">Compre Agora</a>
   </div>
 
+  <!-- RODAPÉ -->
+  <footer>
+    © 2025, Alex Pedroso ° Todos os direitos Reservados
+  </footer>
+
   <script>
     // Parallax mais sutil
     window.addEventListener('scroll', () => {
       const offset = window.scrollY;
       document.querySelectorAll('.animated-img').forEach((img, i) => {
-        img.style.transform = `translateY(${offset * 0.01 * (i + 1)}px)`;
+        img.style.transform = `translateY(${offset * 0.015 * (i + 1)}px)`;
       });
     });
   </script>
