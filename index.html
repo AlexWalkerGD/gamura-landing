@@ -18,7 +18,7 @@
     }
 
     .logo-container img {
-      max-width: 350px;
+      max-width: 350px; /* AUMENTADO O TAMANHO DO LOGO */
     }
 
     .animated-section {
@@ -27,37 +27,36 @@
       justify-content: center;
       gap: 40px;
       margin: 100px auto;
-      width: 100%;
-      padding: 0 40px;
+      max-width: 1200px;
       flex-wrap: wrap;
     }
 
     .animated-img {
-      width: 560px;
+      width: 400px;
       transition: transform 0.3s ease-out;
       will-change: transform;
     }
 
     .animated-text {
-      max-width: 560px;
-      font-size: 30px;
+      max-width: 500px;
+      font-size: 19.6px; /* REDUZIDO EM 30% */
       line-height: 1.6;
       text-align: left;
     }
 
     .animated-text p {
-      margin: 0 0 15px;
+      margin: 0 0 10px;
     }
 
     .price-highlight {
-      font-size: 60px;
+      font-size: 48px;
       color: #00ff88;
       font-weight: bold;
       animation: pulse 1s infinite alternate;
       margin-top: 40px;
       border: 3px solid #00ff88;
-      padding: 20px 40px;
-      border-radius: 20px;
+      padding: 10px 20px;
+      border-radius: 15px;
     }
 
     @keyframes pulse {
@@ -71,12 +70,12 @@
 
     .buy-button {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 20px;
       background: linear-gradient(to right, #9B30FF, #00BFFF);
-      padding: 20px 60px;
-      border-radius: 40px;
+      padding: 20px 40px;
+      border-radius: 30px;
       color: white;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -87,6 +86,11 @@
       transform: scale(1.05);
     }
 
+    .static-price {
+      font-size: 32px;
+      margin-top: 20px;
+    }
+
     .divider {
       width: 100%;
       height: 3px;
@@ -95,44 +99,42 @@
       border-radius: 10px;
     }
 
-    .reviews {
+    /* Avaliações */
+    .reviews-section {
+      background-color: #1a1a1a; /* cinza escuro sutil */
+      padding: 60px 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin: 100px auto;
-      width: 100%;
-      padding: 0 40px;
     }
 
     .review {
       display: flex;
       align-items: center;
       gap: 20px;
-      max-width: 500px;
+      max-width: 800px;
+      margin-bottom: 40px;
     }
 
-    .review-img {
+    .review img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      border: 3px solid #ff69b4;
       object-fit: cover;
     }
 
     .review-text {
-      font-style: italic;
       font-size: 18px;
-      color: #ddd;
+      font-style: italic;
+      color: #ccc;
     }
 
-    footer {
+    .footer {
       background-color: #111;
       text-align: center;
-      padding: 30px 20px;
+      padding: 30px 10px;
+      color: #aaa;
       font-size: 14px;
-      color: #888;
     }
   </style>
 </head>
@@ -148,20 +150,14 @@
   <div class="animated-section">
     <img src="controles.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
     <div class="animated-text">
-      <p>O Controle Gamura Pro é</p>
-      <p>feito para quem busca</p>
-      <p>total controle, conforto</p>
-      <p>e muito estilo.</p>
+      <p>O Controle Gamura Pro é feito para quem busca total controle e estilo com alta performance em qualquer situação de jogo.</p>
     </div>
   </div>
 
   <!-- SEGUNDA SESSÃO -->
   <div class="animated-section">
     <div class="animated-text">
-      <p>Design ergonômico, resposta</p>
-      <p>rápida, conexão USB-C</p>
-      <p>ou Bluetooth para máxima</p>
-      <p>versatilidade de uso.</p>
+      <p>Design ergonômico, resposta rápida e conexão via USB-C ou Bluetooth garantem conforto e precisão em longas sessões.</p>
     </div>
     <img src="controles2.png" alt="Controle Interativo" class="animated-img" id="img2" />
   </div>
@@ -170,22 +166,19 @@
   <div class="animated-section">
     <img src="controles3.png" alt="Controle Moderno" class="animated-img" id="img3" />
     <div class="animated-text">
-      <p>Compatível com PC, Switch,</p>
-      <p>Android. Gatilhos</p>
-      <p>sensíveis e máxima precisão</p>
-      <p>em cada movimento.</p>
+      <p>Compatível com PC, Nintendo Switch e Android. Gatilhos sensíveis e ergonomia ideal para todos os tipos de mãos.</p>
     </div>
   </div>
 
-  <!-- AVALIAÇÕES -->
-  <div class="reviews">
+  <!-- AVALIAÇÕES DE CLIENTES -->
+  <div class="reviews-section">
     <div class="review">
-      <img src="cliente1.jpg" alt="Cliente 1" class="review-img" />
-      <div class="review-text">"Excelente qualidade e chegou super rápido. Controle top!"</div>
+      <img src="cliente1.jpg" alt="Cliente 1">
+      <div class="review-text">"Produto excelente, superou todas as minhas expectativas. Muito confortável e bonito!"</div>
     </div>
     <div class="review">
-      <img src="cliente2.jpg" alt="Cliente 2" class="review-img" />
-      <div class="review-text">"Muito confortável para jogar. Me surpreendeu!"</div>
+      <img src="cliente2.jpg" alt="Cliente 2">
+      <div class="review-text">"A resposta dos botões é muito precisa. Vale cada centavo!"</div>
     </div>
   </div>
 
@@ -196,9 +189,9 @@
   </div>
 
   <!-- RODAPÉ -->
-  <footer>
-    © 2025, Alex Pedroso ° Todos os direitos Reservados
-  </footer>
+  <div class="footer">
+    © 2025, Alex Pedroso ° Todos os direitos reservados
+  </div>
 
   <script>
     // Parallax mais sutil
