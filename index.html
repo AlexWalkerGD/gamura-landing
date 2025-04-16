@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamura - Setup Interativo</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eaeaea;
+      text-align: center;
+    }
+
+    .setup-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .setup-image {
+      width: 100%;
+      display: block;
+    }
+
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .hotspot:hover {
+      border-color: #9b30ff;
+    }
+
+    .details {
+      display: none;
+      padding: 2rem;
+      background-color: #111;
+      border-top: 2px solid #00bfff;
+    }
+
+    .details img {
+      max-width: 300px;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    .details h2 {
+      color: #9b30ff;
+    }
+
+    .buy-button {
+      background-color: #9b30ff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .buy-button:hover {
+      background-color: #b74aff;
+    }
+  </style>
+</head>
+<body>
+  <div class="setup-container">
+    <img src="/mnt/data/A_digital_photograph_displays_a_gaming_setup_on_a_.png" alt="Setup Gamer" class="setup-image" />
+
+    <!-- Hotspots -->
+    <div class="hotspot" style="top: 58%; left: 33%; width: 8%; height: 10%;" onclick="showDetails('controle')"></div>
+    <div class="hotspot" style="top: 40%; left: 60%; width: 10%; height: 12%;" onclick="showDetails('fone')"></div>
+    <div class="hotspot" style="top: 25%; left: 40%; width: 20%; height: 15%;" onclick="showDetails('led')"></div>
+  </div>
+
+  <!-- Detalhes dos produtos -->
+  <div id="controle" class="details">
+    <h2>Controle Gamura Pro</h2>
+    <img src="https://example.com/controle.jpg" alt="Controle Gamer" />
+    <p>Controle compatível com PC, celular e Nintendo Switch. Conexão rápida via Bluetooth.</p>
+    <p><strong>R$ 199,90</strong></p>
+    <button class="buy-button">Comprar Agora</button>
+  </div>
+
+  <div id="fone" class="details">
+    <h2>Fone de Ouvido Gamer Gamura</h2>
+    <img src="https://example.com/fone.jpg" alt="Fone Gamer" />
+    <p>Áudio imersivo com cancelamento de ruído. Perfeito para jogos e lives.</p>
+    <p><strong>R$ 149,90</strong></p>
+    <button class="buy-button">Comprar Agora</button>
+  </div>
+
+  <div id="led" class="details">
+    <h2>Fita LED Azul Gamura</h2>
+    <img src="https://example.com/led.jpg" alt="Fita LED" />
+    <p>Transforme seu setup com essa fita LED de fácil aplicação e brilho intenso.</p>
+    <p><strong>R$ 59,90</strong></p>
+    <button class="buy-button">Comprar Agora</button>
+  </div>
+
+  <script>
+    function showDetails(id) {
+      const details = document.querySelectorAll('.details');
+      details.forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
