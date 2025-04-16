@@ -18,7 +18,48 @@
     }
 
     .logo-container img {
-      max-width: 350px; /* AUMENTADO O TAMANHO DO LOGO */
+      max-width: 350px;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #00BFFF;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      border: 2px solid white;
+    }
+
+    .hotspot[data-hotspot="1"] {
+      top: 40%;
+      left: 30%;
+    }
+
+    .hotspot[data-hotspot="2"] {
+      top: 60%;
+      left: 70%;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
     }
 
     .animated-section {
@@ -38,9 +79,9 @@
     }
 
     .animated-text {
-      max-width: 500px;
-      font-size: 19.6px; /* REDUZIDO EM 30% */
-      line-height: 1.6;
+      max-width: 600px;
+      font-size: 20px;
+      line-height: 1.4;
       text-align: left;
     }
 
@@ -49,23 +90,19 @@
     }
 
     .price-highlight {
-      font-size: 48px;
+      font-size: 52px;
       color: #00ff88;
       font-weight: bold;
       animation: pulse 1s infinite alternate;
       margin-top: 40px;
       border: 3px solid #00ff88;
-      padding: 10px 20px;
-      border-radius: 15px;
+      padding: 10px 30px;
+      border-radius: 10px;
     }
 
     @keyframes pulse {
-      from {
-        transform: scale(1);
-      }
-      to {
-        transform: scale(1.08);
-      }
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
     }
 
     .buy-button {
@@ -86,11 +123,6 @@
       transform: scale(1.05);
     }
 
-    .static-price {
-      font-size: 32px;
-      margin-top: 20px;
-    }
-
     .divider {
       width: 100%;
       height: 3px;
@@ -99,53 +131,51 @@
       border-radius: 10px;
     }
 
-    /* Avaliações */
     .reviews-section {
-  background-color: #1a1a1a;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-}
+      background-color: #1a1a1a;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+    }
 
-.reviews-container {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  width: 100%;
-}
+    .reviews-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1200px;
+      width: 100%;
+    }
 
-.review {
-  flex: 1 1 45%;
-  background-color: #222;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  min-width: 300px;
-}
+    .review {
+      flex: 1 1 45%;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-width: 300px;
+    }
 
-.review img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+    .review img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-.review-text {
-  font-size: 18px;
-  font-style: italic;
-  color: #ccc;
-}
+    .review-text {
+      font-size: 18px;
+      font-style: italic;
+      color: #ccc;
+    }
 
-
-    .footer {
+    footer {
       background-color: #111;
+      padding: 30px;
       text-align: center;
-      padding: 30px 10px;
-      color: #aaa;
+      color: #888;
       font-size: 14px;
     }
   </style>
@@ -157,62 +187,76 @@
     <img src="logo.png" alt="Logo Gamura" />
   </div>
 
-  <!-- PRIMEIRA SESSÃO -->
-  <div class="divider"></div>
-  <div class="animated-section">
-    <img src="controles.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
-    <div class="animated-text">
-      <p>O Controle Gamura Pro é feito para quem busca total controle e estilo com alta performance em qualquer situação de jogo.</p>
-    </div>
+  <!-- HERO COM HOTSPOTS -->
+  <div class="hero">
+    <img src="controle-banner.png" alt="Controle Gamura Hero">
+    <div class="hotspot" data-hotspot="1"></div>
+    <div class="hotspot" data-hotspot="2"></div>
   </div>
 
-  <!-- SEGUNDA SESSÃO -->
-  <div class="animated-section">
-    <div class="animated-text">
-      <p>Design ergonômico, resposta rápida e conexão via USB-C ou Bluetooth garantem conforto e precisão em longas sessões.</p>
+  <!-- CONTEÚDO REVELADO PELO HOTSPOT -->
+  <div id="content" class="section">
+    <div class="divider"></div>
+    <div class="animated-section">
+      <img src="controles.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
+      <div class="animated-text">
+        <p>O Controle Gamura Pro é feito para quem busca total controle e estilo.</p>
+      </div>
     </div>
-    <img src="controles2.png" alt="Controle Interativo" class="animated-img" id="img2" />
-  </div>
 
-  <!-- TERCEIRA SESSÃO -->
-  <div class="animated-section">
-    <img src="controles3.png" alt="Controle Moderno" class="animated-img" id="img3" />
-    <div class="animated-text">
-      <p>Compatível com PC, Nintendo Switch e Android. Gatilhos sensíveis e ergonomia ideal para todos os tipos de mãos.</p>
+    <div class="animated-section">
+      <div class="animated-text">
+        <p>Design ergonômico, resposta rápida e conexão via USB-C ou Bluetooth.</p>
+      </div>
+      <img src="controles2.png" alt="Controle Interativo" class="animated-img" id="img2" />
     </div>
-  </div>
 
-  <!-- AVALIAÇÕES DE CLIENTES -->
-<div class="reviews-section">
-  <div class="reviews-container">
-    <div class="review">
-      <img src="perfil.png" alt="Cliente 1">
-      <div class="review-text">"Produto excelente, superou todas as minhas expectativas. Muito confortável e bonito!"</div>
+    <div class="animated-section">
+      <img src="controles3.png" alt="Controle Moderno" class="animated-img" id="img3" />
+      <div class="animated-text">
+        <p>Compatível com PC, Switch e Android. Gatilhos sensíveis para máxima precisão.</p>
+      </div>
     </div>
-    <div class="review">
-      <img src="perfil.png" alt="Cliente 2">
-      <div class="review-text">"A resposta dos botões é muito precisa. Vale cada centavo!"</div>
-    </div>
-  </div>
-</div>
 
-  <!-- PREÇO E BOTÃO -->
-  <div class="animated-section" style="flex-direction: column;">
-    <div class="price-highlight">R$199,90</div>
-    <a href="#" class="buy-button">Compre Agora</a>
+    <div class="animated-section" style="flex-direction: column;">
+      <div class="price-highlight">R$199,90</div>
+      <a href="#" class="buy-button">Compre Agora</a>
+    </div>
+
+    <!-- AVALIAÇÕES DE CLIENTES -->
+    <div class="reviews-section">
+      <div class="reviews-container">
+        <div class="review">
+          <img src="perfil.png" alt="Cliente 1">
+          <div class="review-text">"Produto excelente, superou todas as minhas expectativas. Muito confortável e bonito!"</div>
+        </div>
+        <div class="review">
+          <img src="perfil.png" alt="Cliente 2">
+          <div class="review-text">"A resposta dos botões é muito precisa. Vale cada centavo!"</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- RODAPÉ -->
-  <div class="footer">
-    © 2025, Alex Pedroso ° Todos os direitos reservados
-  </div>
+  <footer>
+    &copy; 2025, Alex Pedroso ° Todos os direitos reservados.
+  </footer>
 
   <script>
-    // Parallax mais sutil
+    // Scroll Parallax Leve
     window.addEventListener('scroll', () => {
       const offset = window.scrollY;
       document.querySelectorAll('.animated-img').forEach((img, i) => {
         img.style.transform = `translateY(${offset * 0.015 * (i + 1)}px)`;
+      });
+    });
+
+    // Exibe o conteúdo ao clicar nos hotspots
+    document.querySelectorAll('.hotspot').forEach(hotspot => {
+      hotspot.addEventListener('click', () => {
+        document.getElementById('content').classList.add('active');
+        window.scrollTo({ top: document.getElementById('content').offsetTop, behavior: 'smooth' });
       });
     });
   </script>
