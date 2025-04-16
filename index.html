@@ -101,33 +101,45 @@
 
     /* Avaliações */
     .reviews-section {
-      background-color: #1a1a1a; /* cinza escuro sutil */
-      padding: 60px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  background-color: #1a1a1a;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
 
-    .review {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      max-width: 800px;
-      margin-bottom: 40px;
-    }
+.reviews-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
 
-    .review img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+.review {
+  flex: 1 1 45%;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 300px;
+}
 
-    .review-text {
-      font-size: 18px;
-      font-style: italic;
-      color: #ccc;
-    }
+.review img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-text {
+  font-size: 18px;
+  font-style: italic;
+  color: #ccc;
+}
+
 
     .footer {
       background-color: #111;
@@ -171,7 +183,8 @@
   </div>
 
   <!-- AVALIAÇÕES DE CLIENTES -->
-  <div class="reviews-section">
+<div class="reviews-section">
+  <div class="reviews-container">
     <div class="review">
       <img src="cliente1.jpg" alt="Cliente 1">
       <div class="review-text">"Produto excelente, superou todas as minhas expectativas. Muito confortável e bonito!"</div>
@@ -181,6 +194,7 @@
       <div class="review-text">"A resposta dos botões é muito precisa. Vale cada centavo!"</div>
     </div>
   </div>
+</div>
 
   <!-- PREÇO E BOTÃO -->
   <div class="animated-section" style="flex-direction: column;">
