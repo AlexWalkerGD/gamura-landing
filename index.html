@@ -3,168 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gamura - Landing Interativa</title>
+  <title>Controle Gamura Pro</title>
   <style>
     body {
       margin: 0;
       background-color: #000;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
+    }
+
+    .logo-container {
       text-align: center;
+      padding: 40px 20px 20px;
     }
 
-    .top-bar {
+    .logo-container img {
+      max-width: 250px;
+    }
+
+    .animated-section {
       display: flex;
-      justify-content: center; /* Logo centralizado */
       align-items: center;
-      padding: 20px 40px;
-      position: relative;
-    }
-
-    .logo img {
-      max-width: 250px; /* Tamanho do logo ajustado */
-    }
-
-    .icons {
-      display: flex;
-      gap: 20px;
-      position: absolute;
-      left: 20px; /* Ícones deslocados para a esquerda */
-    }
-
-    .icons i {
-      font-size: 24px;
-      cursor: pointer;
-      color: white;
-    }
-
-    .divider {
-      width: 100%;
-      height: 3px;
-      background-color: #00BFFF;
-      margin: 20px 0;
-      border-radius: 10px;
-    }
-
-    .setup-container {
-      position: relative;
-      width: 90%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .setup-image {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .hotspot {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border: 2px solid white;
-      border-radius: 50%;
-      background-color: transparent;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .hotspot:hover {
-      background-color: white;
-    }
-
-    #hotspot-controller {
-      top: 50%;
-      left: 75%;
-    }
-
-    #hotspot-headset {
-      top: 70%;
-      left: 12%;
-    }
-
-    #hotspot-led {
-      top: 80%;
-      left: 75%;
-    }
-
-    .details {
-      display: none;
-      margin: 40px auto;
-      padding: 20px;
-      border-top: 2px solid #00BFFF;
-      text-align: left;
-      max-width: 800px;
-    }
-
-    .product-box {
-      display: flex;
-      gap: 20px;
+      justify-content: center;
+      gap: 40px;
+      margin: 100px auto;
+      max-width: 1200px;
       flex-wrap: wrap;
     }
 
-    .product-box img {
-      width: 200px;
-      border-radius: 10px;
+    .animated-img {
+      width: 400px;
+      transition: transform 0.3s ease-out;
+      will-change: transform;
     }
 
-    .product-info {
-      flex: 1;
+    .animated-text {
+      max-width: 400px;
+      font-size: 28px;
+      line-height: 1.4;
+      text-align: left;
     }
 
-    .product-info h2 {
-      color: #9B30FF;
-      font-size: 36px;
-      margin: 0;
+    .animated-text p {
+      margin: 0 0 10px;
     }
 
-    .stars {
-      color: gold;
-      font-size: 24px;
-      margin: 5px 0;
+    .price-highlight {
+      font-size: 48px;
+      color: #00ff88;
+      font-weight: bold;
+      animation: pulse 1s infinite alternate;
+      margin-top: 40px;
     }
 
-    .variants {
-      display: flex;
-      gap: 20px;
-      margin: 10px 0;
-    }
-
-    .variant {
-      border: 1px solid white;
-      padding: 5px 15px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .description {
-      margin: 20px 0;
-      max-width: 100%;
-    }
-
-    .gallery {
-      display: flex;
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    .gallery img {
-      width: 300px;
-      border: 1px solid #9B30FF;
-      border-radius: 10px;
-    }
-
-    .purchase-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .purchase-info input {
-      width: 60px;
-      padding: 5px;
-      font-size: 16px;
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.08);
+      }
     }
 
     .buy-button {
@@ -185,83 +83,74 @@
       transform: scale(1.05);
     }
 
-    /* Efeito de rolagem para as imagens */
-    .image-scroll {
-      transform: translateY(0);
-      transition: transform 0.5s ease-out;
+    .static-price {
+      font-size: 32px;
+      margin-top: 20px;
     }
 
-    .scroll-image-1 {
-      transform: translateY(-15px); /* Ajuste para movimento mais sutil */
+    .divider {
+      width: 100%;
+      height: 3px;
+      background-color: #00BFFF;
+      margin: 60px auto;
+      border-radius: 10px;
     }
-
-    .scroll-image-2 {
-      transform: translateY(-10px); /* Ajuste para movimento mais sutil */
-    }
-
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
 
-  <div class="top-bar">
-    <div class="logo">
-      <img src="logo.png" alt="Logo Gamura" />
-    </div>
-    <div class="icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-shopping-bag"></i>
-    </div>
+  <!-- LOGO CENTRALIZADO -->
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo Gamura" />
   </div>
 
+  <!-- PRIMEIRA SESSÃO -->
   <div class="divider"></div>
-
-  <div class="setup-container">
-    <img src="setup-gamer.png" alt="Setup Gamer" class="setup-image" />
-    <div id="hotspot-controller" class="hotspot" onclick="showDetails('controller')"></div>
-    <div id="hotspot-headset" class="hotspot" onclick="showDetails('headset')"></div>
-    <div id="hotspot-led" class="hotspot" onclick="showDetails('led')"></div>
+  <div class="animated-section">
+    <img src="controle-sem-fundo1.png" alt="Controle Gamura Pro" class="animated-img" id="img1" />
+    <div class="animated-text">
+      <p>O Controle Gamura</p>
+      <p>Pro é feito para</p>
+      <p>quem busca total</p>
+      <p>controle e estilo.</p>
+    </div>
   </div>
 
-  <div id="details-controller" class="details">
-    <div class="product-box">
-      <img src="controle.avif" alt="Controle" />
-      <div class="product-info">
-        <h2>Controle Gamura Pro</h2>
-        <div class="stars">★★★★★</div>
-      </div>
+  <!-- SEGUNDA SESSÃO -->
+  <div class="animated-section">
+    <div class="animated-text">
+      <p>Design ergonômico,</p>
+      <p>resposta rápida e</p>
+      <p>conexão via USB-C</p>
+      <p>ou Bluetooth.</p>
     </div>
-    <div class="description">
-      <p>O Controle Gamura Pro é a escolha definitiva para gamers exigentes.</p>
-      <p>Compatível com PC, celulares Android e Nintendo Switch.</p>
-      <p>Design ergonômico, conectividade via Bluetooth ou USB-C.</p>
-      <p>Respostas rápidas e gatilhos sensíveis para precisão total.</p>
+    <img src="controle-sem-fundo2.png" alt="Controle Interativo" class="animated-img" id="img2" />
+  </div>
+
+  <!-- TERCEIRA SESSÃO -->
+  <div class="animated-section">
+    <img src="controle-sem-fundo3.png" alt="Controle Moderno" class="animated-img" id="img3" />
+    <div class="animated-text">
+      <p>Compatível com PC,</p>
+      <p>Switch e Android.</p>
+      <p>Gatilhos sensíveis</p>
+      <p>para máxima precisão.</p>
     </div>
-    <div class="gallery">
-      <img src="controle-gallery.avif" class="scroll-image-1"/>
-      <img src="controle-gallery2.avif" class="scroll-image-2"/>
-    </div>
-    <div class="purchase-info">
-      <strong>R$199,90</strong>
-      <label>Qtd: <input type="number" value="1" min="1"></label>
-    </div>
+  </div>
+
+  <!-- PREÇO E BOTÃO -->
+  <div class="animated-section" style="flex-direction: column;">
+    <div class="price-highlight">R$199,90</div>
     <a href="#" class="buy-button">Compre Agora</a>
+    <div class="static-price">R$199,90</div>
   </div>
 
   <script>
-    function showDetails(item) {
-      const sections = document.querySelectorAll('.details');
-      sections.forEach(section => section.style.display = 'none');
-      document.getElementById(`details-${item}`).style.display = 'block';
-    }
-
-    // Efeito de rolagem para imagens
-    window.addEventListener("scroll", function () {
-      const images = document.querySelectorAll('.scroll-image-1, .scroll-image-2');
-      images.forEach((image, index) => {
-        const scrollPosition = window.scrollY;
-        const movement = (scrollPosition * 0.05);  // Ajuste do movimento
-        image.style.transform = `translateY(${movement}px)`;
+    // Parallax mais sutil
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      document.querySelectorAll('.animated-img').forEach((img, i) => {
+        img.style.transform = `translateY(${offset * 0.01 * (i + 1)}px)`;
       });
     });
   </script>
