@@ -2,112 +2,144 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gamura - Setup Interativo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gamura - Landing Interativa</title>
   <style>
     body {
       margin: 0;
       background-color: #000;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #eaeaea;
+      color: white;
       text-align: center;
+    }
+
+    .logo {
+      font-size: 3rem;
+      color: #9B30FF;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    .divider {
+      width: 60%;
+      height: 3px;
+      background-color: #00BFFF;
+      margin: 20px auto;
+      border-radius: 10px;
     }
 
     .setup-container {
       position: relative;
-      width: 100%;
+      width: 90%;
       max-width: 1000px;
       margin: 0 auto;
     }
 
     .setup-image {
       width: 100%;
-      display: block;
+      border-radius: 10px;
     }
 
+    /* Hotspot styles */
     .hotspot {
       position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: transparent;
       cursor: pointer;
-      border: 2px solid transparent;
+      transition: 0.3s;
     }
 
     .hotspot:hover {
-      border-color: #9b30ff;
+      background-color: white;
     }
 
+    /* Hotspot positions (you can adjust these values for better placement) */
+    #hotspot-headset {
+      top: 50%; /* Adjusted to center over the headset */
+      left: 60%;
+    }
+
+    #hotspot-led {
+      top: 70%; /* Adjusted for LED in the bottom-left corner */
+      left: 25%;
+    }
+
+    #hotspot-controller {
+      top: 75%; /* Adjusted for controller position on the left part of the desk */
+      left: 30%;
+    }
+
+    /* Details section styles */
     .details {
       display: none;
-      padding: 2rem;
-      background-color: #111;
-      border-top: 2px solid #00bfff;
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 2px solid #00BFFF;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .details img {
-      max-width: 300px;
-      display: block;
-      margin: 1rem auto;
+      width: 200px;
+      border-radius: 10px;
     }
 
     .details h2 {
-      color: #9b30ff;
-    }
-
-    .buy-button {
-      background-color: #9b30ff;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .buy-button:hover {
-      background-color: #b74aff;
+      color: #9B30FF;
     }
   </style>
 </head>
 <body>
+
+  <div class="logo">
+    <img src="logo.png" alt="Logo Gamura" style="max-width: 200px; display: block; margin: 0 auto;" /> <!-- Image logo -->
+  </div>
+  <div class="divider"></div>
+
   <div class="setup-container">
     <img src="setup-gamer.png" alt="Setup Gamer" class="setup-image" />
 
     <!-- Hotspots -->
-    <div class="hotspot" style="top: 58%; left: 33%; width: 8%; height: 10%;" onclick="showDetails('controle')"></div>
-    <div class="hotspot" style="top: 40%; left: 60%; width: 10%; height: 12%;" onclick="showDetails('fone')"></div>
-    <div class="hotspot" style="top: 25%; left: 40%; width: 20%; height: 15%;" onclick="showDetails('led')"></div>
+    <div id="hotspot-controller" class="hotspot" onclick="showDetails('controller')"></div>
+    <div id="hotspot-headset" class="hotspot" onclick="showDetails('headset')"></div>
+    <div id="hotspot-led" class="hotspot" onclick="showDetails('led')"></div>
   </div>
 
-  <!-- Detalhes dos produtos -->
-  <div id="controle" class="details">
+  <!-- Product Details -->
+  <div id="details-controller" class="details">
     <h2>Controle Gamura Pro</h2>
-    <img src="https://example.com/controle.jpg" alt="Controle Gamer" />
-    <p>Controle compatível com PC, celular e Nintendo Switch. Conexão rápida via Bluetooth.</p>
-    <p><strong>R$ 199,90</strong></p>
-    <button class="buy-button">Comprar Agora</button>
+    <img src="https://example.com/controller.jpg" alt="Controle" />
+    <p>Compatível com PC, celular e Nintendo Switch. Conexão via Bluetooth, design ergonômico e resposta rápida.</p>
+    <p><strong>R$199,90</strong></p>
   </div>
 
-  <div id="fone" class="details">
-    <h2>Fone de Ouvido Gamer Gamura</h2>
-    <img src="https://example.com/fone.jpg" alt="Fone Gamer" />
-    <p>Áudio imersivo com cancelamento de ruído. Perfeito para jogos e lives.</p>
-    <p><strong>R$ 149,90</strong></p>
-    <button class="buy-button">Comprar Agora</button>
+  <div id="details-headset" class="details">
+    <h2>Headset Gamer Surround</h2>
+    <img src="https://example.com/headset.jpg" alt="Headset" />
+    <p>Áudio imersivo com cancelamento de ruído e microfone com captação clara. Perfeito para longas sessões.</p>
+    <p><strong>R$149,90</strong></p>
   </div>
 
-  <div id="led" class="details">
-    <h2>Fita LED Azul Gamura</h2>
-    <img src="https://example.com/led.jpg" alt="Fita LED" />
-    <p>Transforme seu setup com essa fita LED de fácil aplicação e brilho intenso.</p>
-    <p><strong>R$ 59,90</strong></p>
-    <button class="buy-button">Comprar Agora</button>
+  <div id="details-led" class="details">
+    <h2>Fita LED RGB</h2>
+    <img src="https://example.com/led.jpg" alt="LED" />
+    <p>Iluminação que transforma seu setup. Flexível, com controle remoto, ideal para TVs e monitores.</p>
+    <p><strong>R$49,90</strong></p>
   </div>
 
   <script>
-    function showDetails(id) {
-      const details = document.querySelectorAll('.details');
-      details.forEach(el => el.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
+    function showDetails(item) {
+      const sections = document.querySelectorAll('.details');
+      sections.forEach(section => section.style.display = 'none');
+
+      document.getElementById(`details-${item}`).style.display = 'block';
     }
   </script>
+
 </body>
 </html>
